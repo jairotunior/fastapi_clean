@@ -9,6 +9,7 @@ on:
 
 env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
 
 permissions:
   contents: read
@@ -26,6 +27,6 @@ jobs:
     - name: Access Environment Variables
       run: |
         echo "AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}"
-        echo "AWS_REGION: ${{ secrets.AWS_REGION }}"
+        echo "AWS_REGION: $AWS_REGION"
         echo "AWS_ROLE_NAME: ${{ env.AWS_ROLE_NAME }}"
     
