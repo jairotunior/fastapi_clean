@@ -19,10 +19,10 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Access Environment Variables
       run: |
         echo "AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}"
-        echo "AWS_REGION: $MY_VAR"
+        echo "AWS_REGION: ${{ vars.MY_VAR }}"
         echo "AWS_ROLE_NAME: ${{ env.AWS_ROLE_NAME }}"
     
