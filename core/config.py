@@ -5,7 +5,8 @@ class Settings(BaseSettings):
     app_name: str = "Test API"
     app_version: str = "0.1.1"
     api_v1_prefix: str = "/api/v1"
-    database_url: str
+    # Optional for tests that don't hit the database
+    database_url: str | None = None
 
     time_zone: str = "America/Bogota"
 
