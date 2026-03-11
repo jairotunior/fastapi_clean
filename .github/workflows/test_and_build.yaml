@@ -54,12 +54,16 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Set lowercase repository name
-      run: echo "REPO_LC=${{ github.repository_owner }}/${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_ENV
     - name: Build and push Docker image
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: Dockerfile
         push: true
-        tags: ghcr.io/${{ env.REPO_LC }}:latest
+        tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
+        labels: |
+          org.opencontainers.image.source=https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}
+          org.opencontainers.image.description=Docker image for ${{ github.event.repository.name }}
+          org.opencontainers.image.licenses=MIT
+          org.opencontainers.image.authors=${{ github.actor }}
+          org.opencontainers.image.url=https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}
