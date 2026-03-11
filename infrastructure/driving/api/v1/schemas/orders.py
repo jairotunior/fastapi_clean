@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Literal, List
 
 
@@ -17,11 +17,10 @@ class OrderCreate(BaseModel):
 
 
 class OrderOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)  # SQLAlchemy -> Pydantic
+
     id: uuid.UUID
     customer_id: str
     items: List[OrderItem]
     status: Literal["created", "paid", "cancelled"]
     created_at: datetime
-
-    class Config:
-        from_attributes = True  # SQLAlchemy -> Pydantic

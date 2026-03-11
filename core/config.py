@@ -1,7 +1,9 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env")
+
     app_name: str = "Test API"
     app_version: str = "0.1.1"
     api_v1_prefix: str = "/api/v1"
@@ -21,9 +23,6 @@ class Settings(BaseSettings):
     # Optional tuning
     oidc_metadata_ttl_seconds: int = 3600
     oidc_jwks_ttl_seconds: int = 3600
-
-    class Config:
-        env_file = ".env"
 
 
 settings = Settings()
