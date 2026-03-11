@@ -93,6 +93,5 @@ jobs:
     - name: Retrieve Secrets from AWS Secrets Manager
       uses: aws-actions/aws-secretsmanager-get-secrets@v2
       with:
-        secret-ids: |
-          production/secret # Retrieves the entire secret JSON
+        secret-ids: production/secret # Retrieves the entire secret JSON
         parse-json-secrets: true # Parses JSON secrets into individual environment variables
