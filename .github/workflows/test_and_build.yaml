@@ -94,5 +94,5 @@ jobs:
       uses: aws-actions/aws-secretsmanager-get-secrets@v2
       with:
         secret-ids: |
-          arn:aws:secretsmanager:us-east-2:092881290747:secret:production-2d7nIS # Retrieves the entire secret JSON
+          production/secret # Retrieves the entire secret JSON
         parse-json-secrets: true # Parses JSON secrets into individual environment variables
