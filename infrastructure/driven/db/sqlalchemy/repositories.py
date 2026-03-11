@@ -2,9 +2,9 @@
 from uuid import UUID
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from src.application.orders.ports import OrderRepositoryPort
-from src.domain.orders.entity import Order, OrderItem
-from src.infrastructure.driven.db.sqlalchemy.models import Order as OrderModel
+from fastapi_clean.application.orders.ports import OrderRepositoryPort
+from fastapi_clean.domain.orders.entity import Order, OrderItem
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.models import Order as OrderModel
 
 
 def _item_to_domain(i: dict) -> OrderItem:

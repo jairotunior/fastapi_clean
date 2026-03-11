@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Query, Path
 from typing import Annotated
-from src.core.config import settings
-from src.infrastructure.driving.api.v1.schemas.orders import OrderItem
-from src.infrastructure.driving.api.v1.routes.orders import router as orders_router
-from src.infrastructure.driving.api.v1.routes.auth import router as auth_router
+from fastapi_clean.core.config import settings
+from fastapi_clean.infrastructure.driving.api.v1.schemas.orders import OrderItem
+from fastapi_clean.infrastructure.driving.api.v1.routes.orders import router as orders_router
+from fastapi_clean.infrastructure.driving.api.v1.routes.auth import router as auth_router
 
 app = FastAPI(title=settings.app_name, version=settings.app_version)
 

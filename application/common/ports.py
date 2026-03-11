@@ -1,5 +1,5 @@
 from typing import Protocol
-from src.application.common.auth import AuthContext
+from fastapi_clean.application.common.auth import AuthContext
 
 
 class TokenValidatorPort(Protocol):

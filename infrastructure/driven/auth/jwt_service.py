@@ -10,8 +10,8 @@ from jwt import (
     decode,
 )
 
-from src.application.common.auth import AuthContext
-from src.core.config import settings
+from fastapi_clean.application.common.auth import AuthContext
+from fastapi_clean.core.config import settings
 
 logger = logging.getLogger(__name__)
 

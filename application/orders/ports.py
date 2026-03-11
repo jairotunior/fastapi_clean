@@ -1,6 +1,6 @@
 import uuid
 from typing import Protocol
-from src.domain.orders.entity import Order
+from fastapi_clean.domain.orders.entity import Order
 
 
 class OrderRepositoryPort(Protocol):

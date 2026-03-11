@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from src.application.orders.ports import UnitOfWorkPort
-from src.infrastructure.driven.db.sqlalchemy.repositories import (
+from fastapi_clean.application.orders.ports import UnitOfWorkPort
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.repositories import (
     SqlAlchemyOrderRepository,
 )
 

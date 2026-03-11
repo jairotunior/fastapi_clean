@@ -1,8 +1,8 @@
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from src.infrastructure.driven.db.sqlalchemy.session import get_db
-from src.infrastructure.driven.db.sqlalchemy.uow import SqlAlchemyUnitOfWork
-from src.application.orders.use_cases import (
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.session import get_db
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.uow import SqlAlchemyUnitOfWork
+from fastapi_clean.application.orders.use_cases import (
     CreateOrderUseCase,
     GetOrderUseCase,
     ListOrdersUseCase,

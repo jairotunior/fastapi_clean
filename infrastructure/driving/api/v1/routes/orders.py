@@ -1,16 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Security
 from uuid import UUID
-from src.infrastructure.driving.api.v1.schemas.orders import OrderCreate, OrderOut
-from src.infrastructure.driving.api.v1.security import get_current_auth, require_scope
-from src.application.common.auth import AuthContext
-from src.application.orders.commands import CreateOrderCommand
-from src.application.orders.use_cases import (
+from fastapi_clean.infrastructure.driving.api.v1.schemas.orders import OrderCreate, OrderOut
+from fastapi_clean.infrastructure.driving.api.v1.security import get_current_auth, require_scope
+from fastapi_clean.application.common.auth import AuthContext
+from fastapi_clean.application.orders.commands import CreateOrderCommand
+from fastapi_clean.application.orders.use_cases import (
     CreateOrderUseCase,
     GetOrderUseCase,
     ListOrdersUseCase,
 )
-from src.domain.orders.errors import OrderNotFoundError
-from src.infrastructure.driving.api.v1.deps import (
+from fastapi_clean.domain.orders.errors import OrderNotFoundError
+from fastapi_clean.infrastructure.driving.api.v1.deps import (
     create_order_uc,
     get_order_uc,
     list_orders_uc,

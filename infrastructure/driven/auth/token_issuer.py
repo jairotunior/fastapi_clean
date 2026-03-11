@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from jwt import encode
-from src.core.config import settings
+from fastapi_clean.core.config import settings
 
 
 class JwtTokenIssuer:

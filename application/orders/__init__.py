@@ -1,4 +1,4 @@
-from src.application.orders.use_cases import (
+from fastapi_clean.application.orders.use_cases import (
     CreateOrderUseCase,
     GetOrderUseCase,
     ListOrdersUseCase,

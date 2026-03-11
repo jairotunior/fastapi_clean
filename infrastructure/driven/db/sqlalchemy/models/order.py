@@ -7,7 +7,7 @@ from sqlalchemy import DateTime, String, func
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
-from src.infrastructure.driven.db.sqlalchemy.models import Base
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.models import Base
 
 
 class Order(Base):

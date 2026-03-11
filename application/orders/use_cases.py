@@ -1,10 +1,10 @@
 import uuid
 from datetime import datetime
-from src.application.common.auth import AuthContext
-from src.domain.orders.entity import Order, OrderItem
-from src.application.orders.ports import UnitOfWorkPort
-from src.application.orders.commands import CreateOrderCommand
-from src.domain.orders.errors import OrderNotFoundError
+from fastapi_clean.application.common.auth import AuthContext
+from fastapi_clean.domain.orders.entity import Order, OrderItem
+from fastapi_clean.application.orders.ports import UnitOfWorkPort
+from fastapi_clean.application.orders.commands import CreateOrderCommand
+from fastapi_clean.domain.orders.errors import OrderNotFoundError
 
 
 class CreateOrderUseCase:

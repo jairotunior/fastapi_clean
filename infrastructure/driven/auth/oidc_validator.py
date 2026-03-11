@@ -9,9 +9,9 @@ from dataclasses import dataclass
 import httpx
 import jwt
 
-from src.application.common.auth import AuthContext
-from src.domain.common.errors import AuthenticationError
-from src.core.config import settings
+from fastapi_clean.application.common.auth import AuthContext
+from fastapi_clean.domain.common.errors import AuthenticationError
+from fastapi_clean.core.config import settings
 
 
 # JWT = three base64url segments separated by dots

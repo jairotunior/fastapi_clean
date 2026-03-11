@@ -7,13 +7,13 @@ from alembic import context
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from src.core.config import settings
-from src.infrastructure.driven.db.sqlalchemy.models.base import Base  # noqa: F401
+from fastapi_clean.core.config import settings
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.models.base import Base  # noqa: F401
 
 # IMPORTANT: import models so Base.metadata is populated
-from src.infrastructure.driven.db.sqlalchemy.models.order import Order  # noqa: F401
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.models.order import Order  # noqa: F401
 
-# Ensure project root is on path so "src" imports work (e.g. when running from src/)
+# Ensure project root is on path so "fastapi_clean" imports work (e.g. when running from fastapi_clean/)
 _root = Path(__file__).resolve().parents[2]
 if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
