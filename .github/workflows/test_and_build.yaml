@@ -23,6 +23,6 @@ jobs:
     - name: Access Environment Variables
       run: |
         echo "AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}"
-        echo "AWS_REGION: $AWS_REGION"
+        echo "AWS_REGION: $MY_VAR"
         echo "AWS_ROLE_NAME: ${{ env.AWS_ROLE_NAME }}"
     
