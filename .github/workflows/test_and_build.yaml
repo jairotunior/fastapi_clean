@@ -36,6 +36,8 @@ jobs:
       contents: read
       packages: write
 
+    ACTIONS_STEP_DEBUG: true
+
     steps:
     - uses: actions/checkout@v5
     - name: Access Environment Variables
