@@ -3,20 +3,20 @@ import asyncio
 from logging.config import fileConfig
 from pathlib import Path
 
-from alembic import context
-from sqlalchemy import pool
-from sqlalchemy.ext.asyncio import create_async_engine
+# Add project root to path before any local imports (env.py is run as a script by Alembic).
+# Parent of fastapi_clean so that "fastapi_clean" is a top-level package.
+_root = Path(__file__).resolve().parents[2] # noqa: E402
+if str(_root) not in sys.path: # noqa: E402
+    sys.path.insert(0, str(_root)) # noqa: E402
 
-from fastapi_clean.core.config import settings
-from fastapi_clean.infrastructure.driven.db.sqlalchemy.models.base import Base  # noqa: F401
+from alembic import context # noqa: E402
+from sqlalchemy import pool # noqa: E402
+from sqlalchemy.ext.asyncio import create_async_engine # noqa: E402
+
+from fastapi_clean.core.config import settings # noqa: E402
+from fastapi_clean.infrastructure.driven.db.sqlalchemy.models.base import Base  # noqa: E402
 
 # IMPORTANT: import models so Base.metadata is populated
-from fastapi_clean.infrastructure.driven.db.sqlalchemy.models.order import Order  # noqa: F401
-
-# Ensure project root is on path so "fastapi_clean" imports work (e.g. when running from fastapi_clean/)
-_root = Path(__file__).resolve().parents[2]
-if str(_root) not in sys.path:
-    sys.path.insert(0, str(_root))
 
 config = context.config
 fileConfig(config.config_file_name)
