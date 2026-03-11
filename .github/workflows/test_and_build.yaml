@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }}
+  AWS_ACCOUNT_ID: "var"
 
 permissions:
   contents: read
@@ -20,13 +20,26 @@ jobs:
     permissions:
       contents: read
       packages: write
-
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: fastapi
+          POSTGRES_PASSWORD: fastapi
+          POSTGRES_DB: fastapi_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U fastapi"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
     - uses: actions/checkout@v4
     - name: Access Environment Variables
       run: |
-        echo "AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }} ${{ AWS_ACCOUNT_ID }}"
+        echo "AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }}"
         echo "AWS_REGION: ${{ secrets.AWS_REGION }}"
         echo "AWS_ROLE_NAME: ${{ env.AWS_ROLE_NAME }}"
     
