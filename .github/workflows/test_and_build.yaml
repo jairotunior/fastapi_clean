@@ -94,6 +94,5 @@ jobs:
       uses: aws-actions/aws-secretsmanager-get-secrets@v2
       with:
         secret-ids: |
-          my-app/db-credentials # Retrieves the entire secret JSON
-          API_KEY_VAR, another-api-key-secret # Sets an alias for a single key
+          production # Retrieves the entire secret JSON
         parse-json-secrets: true # Parses JSON secrets into individual environment variables
