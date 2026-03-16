@@ -96,7 +96,7 @@ jobs:
         secret-ids: production/secret # Retrieves the entire secret JSON
         parse-json-secrets: true # Parses JSON secrets into individual environment variables
     - name: Login to Amazon ECR
-        id: ${{ github.event.repository.name }}
+        id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
     - name: Build, tag, and push docker image to Amazon ECR
         env:
