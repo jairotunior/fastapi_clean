@@ -102,18 +102,9 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: ${{ github.event.repository.name }}
-        IMAGE_TAG: "latest,${{ github.sha }}"
+        IMAGE_TAG: ${{ github.sha }}
       run: |
-        # Split tags by comma for multiple tags
-          TAG_LIST=$(echo $IMAGE_TAGS | tr ',' ' ')
-          
-          # Build and tag the image
-          for tag in $TAG_LIST; do
-            docker build -t $REGISTRY/$REPOSITORY:$tag .
-          done
-
-          # Push the images
-          for tag in $TAG_LIST; do
-            docker push $REGISTRY/$REPOSITORY:$tag
-          done
+        docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
+        docker image tag $REGISTRY/$REPOSITORY:$IMAGE_TAG $REGISTRY/$REPOSITORY:latest
+        docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
     
