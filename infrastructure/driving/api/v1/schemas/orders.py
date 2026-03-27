@@ -1,7 +1,8 @@
 import uuid
 from datetime import datetime
+from typing import List, Literal
+
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Literal, List
 
 
 class OrderItem(BaseModel):

@@ -10,9 +10,8 @@ import httpx
 import jwt
 
 from fastapi_clean.application.common.auth import AuthContext
-from fastapi_clean.domain.common.errors import AuthenticationError
 from fastapi_clean.core.config import settings
-
+from fastapi_clean.domain.common.errors import AuthenticationError
 
 # JWT = three base64url segments separated by dots
 _B64URL_SEGMENT = re.compile(r"^[A-Za-z0-9_-]+$")

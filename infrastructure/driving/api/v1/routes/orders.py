@@ -1,7 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Security
 from uuid import UUID
-from fastapi_clean.infrastructure.driving.api.v1.schemas.orders import OrderCreate, OrderOut
-from fastapi_clean.infrastructure.driving.api.v1.security import get_current_auth, require_scope
+
+from fastapi import APIRouter, Depends, HTTPException, Security, status
 from fastapi_clean.application.common.auth import AuthContext
 from fastapi_clean.application.orders.commands import CreateOrderCommand
 from fastapi_clean.application.orders.use_cases import (
@@ -15,7 +14,14 @@ from fastapi_clean.infrastructure.driving.api.v1.deps import (
     get_order_uc,
     list_orders_uc,
 )
-
+from fastapi_clean.infrastructure.driving.api.v1.schemas.orders import (
+    OrderCreate,
+    OrderOut,
+)
+from fastapi_clean.infrastructure.driving.api.v1.security import (
+    get_current_auth,
+    require_scope,
+)
 
 router = APIRouter(prefix="/orders", tags=["Orders"])
 

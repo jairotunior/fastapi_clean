@@ -3,11 +3,11 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from fastapi_clean.main import app
 from fastapi_clean.core import config as config_module
 from fastapi_clean.infrastructure.driven.auth import jwt_service as jwt_service_module
 from fastapi_clean.infrastructure.driven.auth.jwt_service import JwtTokenValidator
 from fastapi_clean.infrastructure.driving.api.v1.security import get_oidc_validator
+from fastapi_clean.main import app
 
 
 def _get_token_validator():

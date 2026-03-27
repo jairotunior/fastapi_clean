@@ -1,4 +1,5 @@
 from typing import Protocol
+
 from fastapi_clean.application.common.auth import AuthContext
 
 

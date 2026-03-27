@@ -1,0 +1,15 @@
+line-length = 88 # Same config as black
+exclude = ["apps/**/migrations/*.py", "venv", ".venv"]
+
+[lint]
+select = [
+    "F",  # PyFlakes
+    "E",  # pycodestyle (errors)
+    "W",  # pycodestyle (warnings)
+    "I",  # isort
+    "N",  # pep8-naming
+    "S",  # flake8-bandit
+    "B",  # flake8-bugbear
+    "DJ", # flake8-django
+    "PL", # Pylint
+]

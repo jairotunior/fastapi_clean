@@ -1,5 +1,6 @@
 import uuid
 from typing import Protocol
+
 from fastapi_clean.domain.orders.entity import Order
 
 

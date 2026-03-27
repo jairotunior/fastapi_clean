@@ -1,8 +1,8 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi_clean.application.common.auth import AuthContext
-from fastapi_clean.infrastructure.driven.auth.jwt_service import JwtTokenValidator
 from fastapi_clean.domain.common.errors import AuthenticationError
+from fastapi_clean.infrastructure.driven.auth.jwt_service import JwtTokenValidator
 from fastapi_clean.infrastructure.driven.auth.oidc_validator import OIDCValidator
 
 bearer_scheme = HTTPBearer(auto_error=True)

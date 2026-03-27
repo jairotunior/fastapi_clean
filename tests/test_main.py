@@ -2,7 +2,6 @@ from fastapi.testclient import TestClient
 
 from fastapi_clean.main import app
 
-
 client = TestClient(app)
 
 

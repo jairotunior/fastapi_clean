@@ -2,7 +2,6 @@ from fastapi import APIRouter, HTTPException, status
 from fastapi_clean.infrastructure.driven.auth.token_issuer import JwtTokenIssuer
 from fastapi_clean.infrastructure.driving.api.v1.schemas.auth import LoginIn, TokenOut
 
-
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 
